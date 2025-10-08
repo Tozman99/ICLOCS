@@ -17,7 +17,14 @@
 
 %--------------------------------------------------------
 
-
+% Ensure the ICLOCS folders are on the MATLAB path so that helper
+% functions (e.g. ``solveMyProblem``) can be located when the example is
+% executed directly with ``run`` from a fresh MATLAB session. This keeps
+% the example self-contained for users running it in MATLAB Online where
+% the project path may not have been added yet.
+scriptDir   = fileparts(mfilename('fullpath'));
+projectRoot = fileparts(fileparts(fileparts(scriptDir)));
+addpath(genpath(projectRoot));
 
 
 %% Solve with mesh refinement
